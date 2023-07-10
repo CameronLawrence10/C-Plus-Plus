@@ -1,0 +1,14 @@
+COMPILER = g++
+OPTIONS = -Wall -std=c++11
+PROGRAM = main.out
+
+all: $(PROGRAM)
+
+run: $(PROGRAM)
+	./$(PROGRAM)
+
+$(PROGRAM): main.cpp Hand.cpp Card.cpp Deck.cpp
+	$(COMPILER) $(OPTIONS) main.cpp Hand.cpp Card.cpp Deck.cpp -o $(PROGRAM) 
+
+clean:
+	rm -f $(PROGRAM)
