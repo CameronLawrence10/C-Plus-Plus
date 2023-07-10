@@ -1,0 +1,16 @@
+all: cameronsProject.out
+
+cameronsProject.out: main.o Date.o calcDays.o
+	g++ main.o Date.o calcDays.o -o cameronsProject.out
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+Date.o: Date.cpp
+	g++ -c Date.cpp 
+
+calcDays.o: calcDays.cpp
+	g++ -c calcDays.cpp 
+
+clean:
+	rm *.o cameronsProject.out
