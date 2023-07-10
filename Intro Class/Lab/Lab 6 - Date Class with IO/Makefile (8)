@@ -1,0 +1,10 @@
+COMPILER = g++
+OPTIONS = -Wall -std=c++11
+PROGRAM = main.out
+all: $(PROGRAM)
+run: $(PROGRAM)
+	./$(PROGRAM)
+$(PROGRAM): main.cpp Date.cpp
+	$(COMPILER) $(OPTIONS) main.cpp Date.cpp -o $(PROGRAM)
+clean:
+	rm *_out
